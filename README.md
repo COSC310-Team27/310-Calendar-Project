@@ -7,7 +7,7 @@ We chose the Waterfall Model, a plan-driven model, that would have separate and 
 ### UML Design of the Project 
 
 ---------------------------------------------------------------
-###Main Classes:
+### Main Classes:
 1. EventClass()
 2. SchedulingClass()
 3. UI/UXClass()
