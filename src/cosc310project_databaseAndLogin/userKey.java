@@ -34,36 +34,11 @@ public class userKey extends key{
 	}
 	
 	private boolean getUUID(dbKey k) { //Get UUID from DB
-		try {
-			ResultSet rs = new dbRequest(k) // Creating new dbRequest to fetch Unique User ID
-					.query("SELECT uuid FROM userCred WHERE username = \""+user+"\" AND password = \""+pass+"\";");			// Querying using user name and password
-			rs.next();
-			this.uuid = rs.getString("uuid");
-			
-			return true;
-		}catch(Exception e) {
-			System.err.println("FATAL ERROR(uk-gu):"+e);
-		}
-		return false;
+		//GET UUID
 	}
 	
-
+	//REDO
 	private ArrayList<event> fillEvents(dbKey k) { //Get and Fill Events
-		ArrayList<event> temp = new ArrayList<event>();
-		try {
-			 ResultSet rs = new dbRequest(k)	// Creating ResultSet object to store query result 
-					 .query("INSERT SQL CODE HERE");						//Creating new dbRequest to fetch Unique User ID
-			 while(rs.next()) {
-				 temp.add(						//Adding to temp ArrayList a new object of type events until ResultSet is empty
-						 new event(rs.getString("eventName"), rs.getString("desc"), 
-								 rs.getString("loc"), rs.getBoolean("isFixed"),
-								 rs.getBoolean("isRepeated"), rs.getInt("priority"),
-								 rs.getInt("timeTaken"), rs.getDate("dueDate")));
-			 }
-			 return temp;	  
-		}catch(Exception e) {
-			System.err.println("FATAL ERROR(uk-fe):"+e);
-		}
-		return null;
+		//GET EVENTS
 	}
 }
