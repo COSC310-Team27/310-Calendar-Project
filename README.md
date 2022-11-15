@@ -11,6 +11,8 @@ We chose the Waterfall Model, a plan-driven model, that would have separate and 
 1. EventClass()
 2. SchedulingClass()
 3. UI/UXClass()
-4. DatabaseClass()
-5. LoginClass()
+The UI/UXClass has all the user interface components that make the entire calendar scheduling app. It is wrapped into one function that is connected to the wrest on the main classes.
+5. DatabaseClass()
+6. LoginClass()
+The login class is composed of the data query and signup form that will be sent to the database after the button is clicked. It references the main index html in a seperate webpage. 
 --------------------------------------------------------
