@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-abstract class request{ 
+abstract public class request{ 
 	
 	private final dbKey DBkey;	//dbKey to interact with DB
 	
@@ -28,7 +28,7 @@ abstract class request{
 		return conn;
 	}
 	
-	protected void close() {
+	protected void close() {	//Close DB;
 		try {
 			if (!conn.isClosed()) 
 				conn.close();

@@ -1,124 +1,87 @@
 package cosc310project_scheduling;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class event {
-    private String name, description, location;
-    private boolean fixed;
-    private Date endDate; //holds endDate as a Date datatype
-    private int rt; //remaining time to deadline in hours
-    private int priority, length;//length is how long the task will take
-    private String[] timeScheduled; //format from above extended with extra -xx which will go from 1-48 with each integer marking a half hour
-    private boolean repeat;
-    private String[] repeats; //format same as timeScheduled
-    private static int num = 1;
+public class event{
+	private String ueid, name, des, location, sk;
+	private Date dueDate; //Date it is happening or when it's due
+	private boolean fixed, repeat;
+	
+	public event(String ueid, String name, String des, Date dueDate, String location, String sk, boolean fixed) {
+		this.setUeid(ueid);
+		this.setName(name); 
+		this.setDes(des);
+		this.setLocation(location);
+		this.setSk(sk);
+		this.setDueDate(dueDate); 
+	}
 
-    public event(String name, String desc, String loc, boolean f, boolean r, int p, int l, Date ed){
-        setName(name);
-        setDescription(desc);
-    	setLocation(loc);
-    	setFixed(f);
-    	setRepeat(r);
-    	setLength(l);
-    	setEndDate(ed);
-    	rt = getRT();
-    	num++;
-    }
+	public int getDaysUntilDue() {
+		 return (int) (((dueDate.getTime()) - (new Date().getTime()))/1000) / 3600;	
+	}
 
-    public String getCurrentDate(){
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-        Date date = new Date(System.currentTimeMillis());
-        return formatter.format(date);
-    }
+	public String getUeid() {
+		return ueid;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setUeid(String ueid) {
+		this.ueid = ueid;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getLocation() {
+		return location;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getLocation() {
-        return location;
-    }
-    
-    public int getRT() {
-        rt = calcRT();
-        return rt;
-    }
-    
-    private int calcRT() {
-    	 return (int) (((endDate.getTime()) - (new Date().getTime()))/1000) / 3600;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+	public String getSk() {
+		return sk;
+	}
 
-    public boolean isFixed() {
-        return fixed;
-    }
+	public void setSk(String sk) {
+		this.sk = sk;
+	}
 
-    public void setFixed(boolean fixed) {
-        this.fixed = fixed;
-    }
+	public String getDes() {
+		return des;
+	}
 
-    public Date getEndDate() {
-        return endDate;
-    }
+	public void setDes(String des) {
+		this.des = des;
+	}
 
-    public void setEndDate(Date currentDate) {
-        endDate = currentDate;
-    }
+	public Date getDueDate() {
+		return dueDate;
+	}
 
-    public int getPriority() {
-        return priority;
-    }
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
 
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
+	public boolean isFixed() {
+		return fixed;
+	}
 
-    public int getLength() {
-        return length;
-    }
+	public void setFixed(boolean fixed) {
+		this.fixed = fixed;
+	}
 
-    public void setLength(int length) {
-        this.length = length;
-    }
+	public boolean isRepeat() {
+		return repeat;
+	}
 
-    public String[] getTimeScheduled() {
-        return timeScheduled;
-    }
-
-    public void setTimeScheduled(String[] timeScheduled) {
-        this.timeScheduled = timeScheduled;
-    }
-
-    public boolean isRepeat() {
-        return repeat;
-    }
-
-    public void setRepeat(boolean repeat) {
-        this.repeat = repeat;
-    }
-
-    public String[] getRepeats() {
-        return repeats;
-    }
-
-    public void setRepeats(String[] repeats) {
-        this.repeats = repeats;
-    }
+	public void setRepeat(boolean repeat) {
+		this.repeat = repeat;
+	}
+	
 }
-

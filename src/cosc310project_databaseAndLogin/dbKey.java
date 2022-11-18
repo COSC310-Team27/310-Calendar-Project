@@ -32,13 +32,13 @@ class SQLCredentialException extends Exception{
 
 }
 
-class testRequest extends request {
+class testRequest extends request {	//testRequest extends abstract class request
 
 	public testRequest(dbKey key){
 		super(key);
 	}
 	
-	public boolean test() {
+	public boolean test() {	//returns a true or false based on a db test
 		try {
 			connect();
 			Statement stmt = conn.createStatement();
@@ -47,10 +47,9 @@ class testRequest extends request {
 			close();
 			if (code.equals("@ab3u48tbnz34eu4)(#74kj")) return true; else return false;
 		} catch (SQLException e) {
-			System.out.println("FATAL ERROR(br-t): "+e);
+			System.out.println("FATAL ERROR(tr-t): "+e);
 			return false;
-		}
-		
+		}	
 	}
 	
 }

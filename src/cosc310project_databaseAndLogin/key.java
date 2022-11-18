@@ -2,13 +2,15 @@ package cosc310project_databaseAndLogin;
 
 import java.security.MessageDigest;
 
-public class key {
+public abstract class key {
 	protected String user, pass;	//User name and Password
 	
-	key(String user, String pass){	//Constructor adds user name and password to final fields
+	protected key(String user, String pass){	//Constructor adds user name and password to final fields
 		this.user = user;
 		this.pass = pass;	
 	}
+	
+	protected key() {}; //For Empty Keys
 	
 	public String getUser() {	//Get User name
 		return user;
