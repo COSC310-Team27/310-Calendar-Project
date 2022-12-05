@@ -1,5 +1,8 @@
 package cosc310project_scheduling;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class event{
@@ -7,16 +10,18 @@ public class event{
 	private Date dueDate; //Date it is happening or when it's due
 	private boolean fixed, repeat;
 	
-	public event(String ueid, String name, String des, Date dueDate, String location, String sk, boolean fixed) {
+	public event(String ueid, String name, String des, Date dueDate, String location, String sk, boolean fixed) {	//Normal Event
 		this.setUeid(ueid);
 		this.setName(name); 
 		this.setDes(des);
 		this.setLocation(location);
 		this.setSk(sk);
 		this.setDueDate(dueDate); 
+		this.fixed = fixed;
 	}
 
 	public int getDaysUntilDue() {
+		 System.out.println("DueDate: "+dueDate.getTime()+" Today: "+new Date().getTime());
 		 return (int) (((dueDate.getTime()) - (new Date().getTime()))/1000) / 3600;	
 	}
 

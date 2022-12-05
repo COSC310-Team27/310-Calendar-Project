@@ -22,6 +22,10 @@ public class userKey extends key{
 		events = fillEvents(dbKey);	//Fill Events
 	}
 	
+	// userKey testing, comment out after testing
+	public userKey(String user, String pass) {super(user, pass);} 
+	public void setEventsNoDB(ArrayList<event> e) {this.events = e;} 
+	
 	public String getUUID() {	//Return user's UUID
 		return uuid;
 	}
