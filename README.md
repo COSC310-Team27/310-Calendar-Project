@@ -10,7 +10,7 @@ The project we will be developing for Computer Science 310 is an automated sched
 
 This application has many features which run individually but the main features are as listed below:
 
-1. Log in: The primary purpose of this application is to help users schedule their week and based on theor to do list, thus we save each user as an indivisual user
+1. Log in: The primary purpose of this application is to help users schedule their week and based on theory to do list, thus we save each user as an indivisual user
 
 2. Scheduling and showing  your weekly activities: The application has a main purpose to schedule your week based on the priority and difficulty. The input provided by the user and based on the patterns we can draw we try shceduling the users week
 
@@ -20,9 +20,13 @@ This application has many features which run individually but the main features 
 
 > ![Image](/images/DFDL0.png)
 
-##  Data Flow Diagram Leve 1:
+##  Data Flow Diagram Level 1:
 
 > ![Image](/images/DFDL1.png)
+
+##  Adding Event Names / To do tasks
+
+I added a new feature where students can input names of events or to do tasks on the right column of the web app. By clicking the plus icon, you can add as many events as you like, and by clicking the minus icon, you can delete events as you like. This will be saved in the backend system. Within this feature, the google street view image API is implemented which lets users retrieve Street View panorama or thumbnail images with parameterized HTTP requests.
 
 ## Github Repository :
 
